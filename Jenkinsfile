@@ -47,13 +47,13 @@ pipeline {
         stage('Delete Old Docker Images') {
             steps {
                 echo 'Deleting..'
-                sh 'docker rmi $(docker images -q)'
+                sh 'sudo docker rmi $(docker images -q)'
               }
         }
         stage('Delete old containers') {
             steps {
                 echo 'Deleting Containers..' 
-                sh 'docker rm -f $(docker ps -aq)'
+                sh 'sudo docker rm -f $(docker ps -aq)'
             }
         }
         stage('Docker build') {
@@ -65,7 +65,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'mv /var/lib/jenkins/workspace/PIPELINE/target/*war /opt/tomcat/webapps/'
+                sh 'sudo mv /var/lib/jenkins/workspace/PIPELINE/target/*war /opt/tomcat/webapps/'
             }
         }
     }

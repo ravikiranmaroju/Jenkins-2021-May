@@ -47,7 +47,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'mv /var/lib/jenkins/workspace/job1-pipeline/target/*war /opt/tomcat/webapps/'
+                sh 'mv /var/lib/jenkins/workspace/PIPELINE/target/*war /opt/tomcat/webapps/'
             }
         }
     }

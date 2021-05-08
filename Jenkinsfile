@@ -44,10 +44,22 @@ pipeline {
                 echo 'Monitoring..'
             }
         }
+        stage('Docker Images Delete') {
+            steps {
+                echo 'Docker deleting the old images..'
+                sh 'sudo rm -rf /var/lib/docker/image/overlay2/imagedb/content/sha256/'
+            }
+        }
+        stage('Docker creating new Directories') {
+            steps {
+                echo 'Docker Created new directories..'
+                sh 'sudo mkdir /var/lib/docker/image/overlay2/imagedb/content/sha256'
+         }
+        }
         stage('Docker build') {
             steps {
                 echo 'Docker Builing the image..'
-                sh 'sudo docker build .'
+                sh 'sudo docker build .'       
             }
         }
         stage('Deploy') {

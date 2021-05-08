@@ -54,12 +54,18 @@ pipeline {
             steps {
                 echo 'Docker Created new directories..'
                 sh 'sudo mkdir /var/lib/docker/image/overlay2/imagedb/content/sha256'
-         }
+            }
         }
         stage('Docker build') {
             steps {
                 echo 'Docker Builing the image..'
                 sh 'sudo docker build .'       
+            }
+        }
+        stage('Docker Delete old containers') {
+            steps {
+                echo 'Docker deleting old containers..'
+                sh 'sudo rm -rf /var/lib/docker/containers/ && mkdir /var/lib/docker/containers/'       
             }
         }
         stage('Deploy') {

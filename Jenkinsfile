@@ -44,11 +44,10 @@ pipeline {
                 echo 'Monitoring..'
             }
         }
-        }
         stage('Build Docker Image') {
             steps {
-                echo 'Building......'
-                sh 'docker build .'
+                script {
+                    dockerImage = docker.build registry
             }
         }
         stage('Deploy') {

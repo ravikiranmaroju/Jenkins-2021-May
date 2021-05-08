@@ -53,7 +53,7 @@ pipeline {
         stage('Docker Delete old containers') {
             steps {
                 echo 'Docker deleting old containers..'
-                sh 'sudo rm -rf /var/lib/docker/containers/ && mkdir /var/lib/docker/containers/'       
+                sh 'sudo rm -rf /var/lib/docker/containers/ && sudo mkdir /var/lib/docker/containers/'       
             }
         }
         stage('Deploy') {

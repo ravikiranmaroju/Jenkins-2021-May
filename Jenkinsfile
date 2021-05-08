@@ -44,18 +44,6 @@ pipeline {
                 echo 'Monitoring..'
             }
         }
-        stage('Delete Old Docker Images') {
-            steps {
-                echo 'Deleting..'
-                sh 'sudo docker rmi $(docker images -q)'
-              }
-        }
-        stage('Delete old containers') {
-            steps {
-                echo 'Deleting Containers..' 
-                sh 'sudo docker rm -f $(docker ps -aq)'
-            }
-        }
         stage('Docker build') {
             steps {
                 echo 'Docker Builing the image..'

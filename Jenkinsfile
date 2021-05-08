@@ -47,7 +47,7 @@ pipeline {
         stage('Docker build') {
             steps {
                 echo 'Docker Builing the image..'
-                sh 'docker build .'
+                sh 'sudo docker build .'
             }
         }
         stage('Deploy') {

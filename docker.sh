@@ -1,1 +1,1 @@
-docker rmi $(docker images -q)
+sudo 'docker rmi $(docker images -q)'

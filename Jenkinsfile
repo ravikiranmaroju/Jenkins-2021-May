@@ -44,12 +44,6 @@ pipeline {
                 echo 'Monitoring..'
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                echo 'Building'
-                sh 'docker build .'
-            }
-        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'

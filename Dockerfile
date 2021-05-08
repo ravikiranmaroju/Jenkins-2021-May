@@ -43,3 +43,4 @@ EXPOSE 80
 # CMD ["sed", "-n", "74p", "/etc/apache2/apache2.conf"]
 # CMD ["cat", "/etc/apache2/envvars"]
 CMD /usr/sbin/apache2ctl -D FOREGROUND
+

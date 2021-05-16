@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checkout the code from SCM..'
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '7616dfee-a19c-485a-9d3b-74924e87f231', url: 'https://github.com/ravikiranmaroju/Jenkins-Repo.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '7616dfee-a19c-485a-9d3b-74924e87f231', url: 'https://github.com/ravikiranmaroju/Jenkins-2021-May.git']]])
             }
         }
         stage('Prepare') {
